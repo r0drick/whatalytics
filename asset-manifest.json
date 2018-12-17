@@ -1,0 +1,13 @@
+{
+  "main.css": "/whatalytics/static/css/main.c8fe5517.chunk.css",
+  "main.js": "/whatalytics/static/js/main.5e34674a.chunk.js",
+  "main.js.map": "/whatalytics/static/js/main.5e34674a.chunk.js.map",
+  "static/js/1.a8f718fe.chunk.js": "/whatalytics/static/js/1.a8f718fe.chunk.js",
+  "static/js/1.a8f718fe.chunk.js.map": "/whatalytics/static/js/1.a8f718fe.chunk.js.map",
+  "runtime~main.js": "/whatalytics/static/js/runtime~main.0af90d44.js",
+  "runtime~main.js.map": "/whatalytics/static/js/runtime~main.0af90d44.js.map",
+  "static/css/main.c8fe5517.chunk.css.map": "/whatalytics/static/css/main.c8fe5517.chunk.css.map",
+  "index.html": "/whatalytics/index.html",
+  "precache-manifest.08efd4f28cb82b26c560e96a1d59f6be.js": "/whatalytics/precache-manifest.08efd4f28cb82b26c560e96a1d59f6be.js",
+  "service-worker.js": "/whatalytics/service-worker.js"
+}
