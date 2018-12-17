@@ -4,7 +4,7 @@ import Task, {getTasks} from '../tasks'
 import * as ReactDOM from 'react-dom'
 
 export default class Parser {
-	private readonly regex = RegExp(/((?:\d\d?\/?){3}), (\d\d?:\d\d(?: [A|P]M)) - ([^:]*): ([\s\S]*?)(?=(?:\d\d?\/?){3}, \d\d?:\d\d(?: [A|P]M) - )/g)
+	private readonly regex = RegExp(/((?:\d\d?\/?){3}), (\d\d?:\d\d(?: [A|P]M)?) - ([^:]*): ([\s\S]*?)(?=(?:\d\d?\/?){3}, \d\d?:\d\d(?: [A|P]M)? - )/g)
 
 	constructor(chat: string) {
 		const tasks: Task[] = getTasks()
