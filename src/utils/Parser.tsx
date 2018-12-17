@@ -4,7 +4,7 @@ import Task, {getTasks} from '../tasks'
 import * as ReactDOM from 'react-dom'
 
 export default class Parser {
-	private regex = RegExp(/((?:\d\d?\/?){3}), (\d\d?:\d\d) - ([^:]*): ([\s\S]*?)(?=(?:\d\d?\/?){3}, \d\d:\d\d - )/g)
+	private readonly regex = RegExp(/((?:\d\d?\/?){3}), (\d\d?:\d\d(?: [A|P]M)) - ([^:]*): ([\s\S]*?)(?=(?:\d\d?\/?){3}, \d\d?:\d\d(?: [A|P]M) - )/g)
 
 	constructor(chat: string) {
 		const tasks: Task[] = getTasks()
@@ -25,8 +25,9 @@ export default class Parser {
 	}
 
 	private static parse(match: RegExpExecArray): Message {
-		const [year, month, day] = match[1].split('/').map(str => Number(str))
-		const [hour, minute] = match[2].split(':').map(str => Number(str))
+		let [year, month, day] = match[1].split('/').map(str => Number(str))
+		let [hour, minute] = match[2].split(':').map(str => Number(str.substr(0, 2)))
+		if (match[2].endsWith('PM')) hour += 12 // Handle AM/PM time structure
 
 		return new Message(match[4], match[3], new Date(year, month, day, hour, minute))
 	}
