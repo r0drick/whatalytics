@@ -4,7 +4,7 @@ import Message from '../utils/Message'
 import Pair from '../utils/Pair'
 
 export default class WordsPerUser implements Task {
-	name: string = 'Words Per User'
+	readonly name: string = 'Words Per User'
 	private messages: { [key: string]: number } = {}
 
 	invoke(message: Message): void {
