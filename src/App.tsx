@@ -1,5 +1,5 @@
 import * as React from 'react'
-import './App.css'
+import './App.sass'
 import Parser from './utils/Parser'
 
 const fileHandler = (file: File): Promise<Parser> => {
@@ -17,6 +17,7 @@ const fileHandler = (file: File): Promise<Parser> => {
 
 const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
 	if (e.target.files!.length === 0) return
+	// noinspection JSUnusedLocalSymbols
 	const parser: Parser = await fileHandler(e.target.files![0])
 }
 
@@ -25,7 +26,7 @@ export default class App extends React.Component {
 		return (
 				<>
 					<span className='logo'>Whatalytics</span>
-					<input type='file' accept='.txt' onChange={handleUpload}/>
+					<input id='upload-dialog' type='file' accept='.txt' onChange={handleUpload} style={{display: 'none'}}/>
 					<div id='result'/>
 				</>
 		)
