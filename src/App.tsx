@@ -22,12 +22,11 @@ type AppState = {
 
 export default class App extends React.Component<{}, AppState> {
 	fullpage: any
-	parser: Parser
+	parser: Parser | undefined
 
 	constructor() {
 		super({})
 		this.handleUpload = this.handleUpload.bind(this)
-		this.parser = new Parser()
 		this.state = {
 			elements: [],
 		}
@@ -35,9 +34,10 @@ export default class App extends React.Component<{}, AppState> {
 
 	handleUpload(e: React.ChangeEvent<HTMLInputElement>) {
 		if (e.target.files!.length === 0) return
+		this.parser = new Parser()
 		fileHandler(e.target.files![0]).then(chat => {
 			this.setState({
-				elements: this.parser.run(chat),
+				elements: this.parser!.run(chat),
 			})
 		})
 	}
