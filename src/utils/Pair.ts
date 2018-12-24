@@ -1,6 +1,6 @@
 export default class Pair<A, B> {
-	readonly first: A
-	readonly second: B
+	first: A
+	second: B
 
 	constructor(first: A, second: B) {
 		this.first = first
