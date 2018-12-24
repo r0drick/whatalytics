@@ -1,13 +1,13 @@
 {
   "main.css": "/whatalytics/static/css/main.8f44b665.chunk.css",
-  "main.js": "/whatalytics/static/js/main.a227f28a.chunk.js",
-  "main.js.map": "/whatalytics/static/js/main.a227f28a.chunk.js.map",
-  "static/js/1.ad58daf7.chunk.js": "/whatalytics/static/js/1.ad58daf7.chunk.js",
-  "static/js/1.ad58daf7.chunk.js.map": "/whatalytics/static/js/1.ad58daf7.chunk.js.map",
+  "main.js": "/whatalytics/static/js/main.978ba3d1.chunk.js",
+  "main.js.map": "/whatalytics/static/js/main.978ba3d1.chunk.js.map",
+  "static/js/1.f191c4bb.chunk.js": "/whatalytics/static/js/1.f191c4bb.chunk.js",
+  "static/js/1.f191c4bb.chunk.js.map": "/whatalytics/static/js/1.f191c4bb.chunk.js.map",
   "runtime~main.js": "/whatalytics/static/js/runtime~main.0af90d44.js",
   "runtime~main.js.map": "/whatalytics/static/js/runtime~main.0af90d44.js.map",
   "static/css/main.8f44b665.chunk.css.map": "/whatalytics/static/css/main.8f44b665.chunk.css.map",
   "index.html": "/whatalytics/index.html",
-  "precache-manifest.dbe265b039970e8474b0a991b3408388.js": "/whatalytics/precache-manifest.dbe265b039970e8474b0a991b3408388.js",
+  "precache-manifest.9f14b29892c184afca2485240c859660.js": "/whatalytics/precache-manifest.9f14b29892c184afca2485240c859660.js",
   "service-worker.js": "/whatalytics/service-worker.js"
 }
