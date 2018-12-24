@@ -1,9 +1,9 @@
 import * as React from 'react'
 import Task from './index'
 import Message from '../utils/Message'
+import {Line} from 'react-chartjs-2'
 
 enum Month {
-	// noinspection JSUnusedGlobalSymbols
 	January,
 	February,
 	March,
@@ -20,7 +20,7 @@ enum Month {
 
 export default class MessagesPerMonth implements Task {
 	readonly name: string = 'Messages Per Month'
-	private months: {[key: number]: number} = {}
+	private months: number[] = Array.apply(null, Array(11)).map(() => 0)
 
 	invoke(message: Message): void {
 		const month = message.date.getMonth()
@@ -31,11 +31,14 @@ export default class MessagesPerMonth implements Task {
 	}
 
 	get element(): JSX.Element {
-		return (<>
-			<div key={this.name}>
-				<h5>{this.name}</h5>
-				{Object.keys(this.months).map(key => Number(key)).map(month => <>{Month[month]}: {this.months[month]}<br/></>)}
-			</div>
-		</>)
+		return <Line
+				data={{
+					labels: Object.keys(Month).filter(k => typeof Month[k as any] === 'number'),
+					datasets: [{
+						label: 'Messages',
+						data: Object.values(this.months),
+						backgroundColor: '#81D4FA',
+					}],
+				}}/>
 	}
 }
