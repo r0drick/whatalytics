@@ -2,24 +2,34 @@ import Task from '.'
 import * as React from 'react'
 import Message from '../utils/Message'
 import Pair from '../utils/Pair'
+import {HorizontalBar} from 'react-chartjs-2'
 
 export default class MessagesPerUser implements Task {
 	readonly name: string = 'Messages Per User'
-	private messages: { [key: string]: number } = {}
+	private messages: { [key: string]: Pair<number, number> } = {}
+
+	get element(): JSX.Element {
+		return <HorizontalBar
+				data={{
+					labels: Object.keys(this.messages),
+					datasets: [{
+						label: 'Messages',
+						data: Object.values(this.messages).map(value => value.first),
+						backgroundColor: '#81D4FA',
+					}, {
+						label: 'Words',
+						data: Object.values(this.messages).map(value => value.second),
+						backgroundColor: '#FFD54F',
+					}],
+				}}/>
+	}
 
 	invoke(message: Message): void {
 		if (typeof this.messages[message.author] === 'undefined')
-			this.messages[message.author] = 1
+			this.messages[message.author] = new Pair(1, 0)
 		else
-			this.messages[message.author]++
-	}
+			this.messages[message.author].first++
 
-	get element(): JSX.Element {
-		let userArray: Pair<string, number>[] = []
-		for (let author in this.messages)
-			userArray.push(new Pair<string, number>(author, this.messages[author]))
-		userArray.sort((a, b) => b.second - a.second)
-
-		return <div key={this.name}><h5>{this.name}</h5>{userArray.map(pair => <>{pair.first}: {pair.second}<br/></>)}</div>
+		this.messages[message.author].second += message.content.match(/\S+/g)!.length || 0
 	}
 }
