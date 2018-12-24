@@ -4,14 +4,17 @@
   "private": true,
   "homepage": "https://r0drick.github.io/whatalytics/",
   "dependencies": {
+    "@types/chart.js": "^2.7.42",
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.15",
     "@types/react": "^16.7.17",
     "@types/react-dom": "^16.0.11",
     "chart.js": "^2.7.3",
+    "fullpage.js": "^3.0.4",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "react": "^16.6.3",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.6.3",
     "react-scripts": "2.1.1",
     "typescript": "^3.2.2"
